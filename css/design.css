@@ -247,9 +247,39 @@ footer .copyrights p {
   color: var(--white);
   opacity: 0.25;
 }
-footer .dark-light .fa-solid {
+footer .dark-light .track {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  outline: 2px solid #ffffff;
+}
+footer .dark-light .handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  background-color: rgb(36, 57, 79);
+  border-radius: 50%;
+  transform: translateX(100%);
   cursor: pointer;
-  transition: color 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+footer .dark-light .fa-solid {
+  font-size: 20px;
+  color: rgb(129, 130, 130);
+  transition: color 0.6s;
+}
+footer .dark-light .move {
+  transform: translateX(0);
+  background-color: rgb(72, 94, 119);
+}
+footer .dark-light .move .fa-lightbulb {
+  color: rgb(255, 225, 31);
+  text-shadow: 0 0 15px rgb(255, 241, 149);
 }
 footer .dark-light .dark {
   color: var(--white);
