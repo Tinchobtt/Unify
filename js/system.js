@@ -42,7 +42,7 @@ const verificarVacio = (str)=>{
 const listaVAcia = (lista)=>{
     return !lista || lista.length === 0;
 }
-
+/*
 let i = true;
 while(i === true){
     let menu = parseInt(prompt('1- Ver Tareas \n2- Crear nueva tarea \n3- Eliminar tarea \n4- Salir'));
@@ -59,4 +59,4 @@ while(i === true){
         default:
             i = false;
     }
-}
+}*/

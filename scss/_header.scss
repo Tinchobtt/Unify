@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    .logo-container{
+        width: 10em;
+        padding: 1em;
+        margin-left: 1em;
+        img{
+            width: 100%;
+        }
+    }
+    .daily-info{
+        display: flex;
+        align-items: center;
+        .daily-date, .daily-day{
+            margin-right: 4em;
+        }
+        .daily-hour{
+            margin-right: 2em;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+/*Letras*/
+.xxl-text{
+    font-size: 48px;
+    color: var(--white);
+}
+.xl-text{
+    font-size: 38px;
+    color: var(--white);
+}
+.l-text{
+    font-size: 32px;
+    color: var(--white);
+}
+.md-text{
+    font-size: 18px;
+    color: var(--white);
+}
+.s-text{
+    font-size: 14px;
+    color: var(--white);
+}
+.xs-text{
+    font-size: 12px;
+    color: var(--white);
+    opacity: .5;
+}
+/*SCROLL BAR*/
+/* width */
+::-webkit-scrollbar {
+    width:10px;
+} 
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #2c3335; 
+    border-radius: 50px;
+}  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d9d9d972; 
+    border-radius: 50px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #525759; 
+
+}
