@@ -17,10 +17,10 @@
                 <span class="md-text">Sunday</span>
             </div>
             <div class="daily-date">
-                <span class="md-text">14/05/2023</span>
+                <span class="md-text"></span>
             </div>
             <div class="daily-hour">
-                <span class="l-text">18:20 hs</span>
+                <span class="l-text"></span>
             </div>
         </div>
     </header>
@@ -29,10 +29,10 @@
             <header>
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text">
+                    <input id="searchInput" type="text" placeholder="Buscar...">
                 </div>
                 <div class="sort">
-                    <select name="sort" id="">
+                    <select name="sort" id="sortSelect">
                         <option value="">Agregadas recientemente</option>
                         <option value="">Urgentes</option>
                         <option value="">Menos urgentes</option>
@@ -40,88 +40,40 @@
                         <option value="">Esta semana</option>
                         <option value="">Este mes</option>
                     </select>
-                    <label for="sort">
-                        <i class="fa-solid fa-caret-down"></i>
-                    </label>
+                    <i class="fa-solid fa-caret-down"></i>
                 </div>
             </header>
-            <div class="tasks">
-                <div class="task">
-                    <div class="task-info">
-                        <h3 class="task-title md-text">Cena</h3>
-                        <p class="task-text s-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nesciunt veritatis quas natus voluptatibus esse distinctio blanditiis, alias aliquam reiciendis omnis neque magni ducimus assumenda eum voluptatem ipsam fuga iste?</p>
-                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
-                        <div class="task-dates">
-                            <p class="xs-text"><span>12/07/2034</span></p>
-                            <p class="xs-text"><span>12/05/2034</span></p>
+            <div class="task-section">
+                <div class="tasks">
+                    <!--<div class="task">
+                        <div class="task-info">
+                            <h3 class="task-title md-text">Cena</h3>
+                            <p class="task-text s-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nesciunt veritatis quas natus voluptatibus esse distinctio blanditiis, alias aliquam reiciendis omnis neque magni ducimus assumenda eum voluptatem ipsam fuga iste?</p>
+                            <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
+                            <div class="task-dates">
+                                <p class="xs-text"><span>Inicio: 12/07/2034</span></p>
+                                <p class="xs-text"><span>Fin: 12/05/2034</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="task-btns">
-                        <input type="checkbox" name="" id="">
-                        <span class="edit-btn"><i class="fa-solid fa-pencil"></i></span>
-                        <span class="delete-btn"><i class="fa-solid fa-trash"></i></span>
-                    </div>
-                    <div class="add-task-section">
-                        <label for="title">Titulo:</label>
-                        <input type="text" name="title">
-                        <label for="tarea">tarea:</label>
-                        <input type="text" name="tarea" placeholder="Empiece a escribir">
-                        <label for="name">Fecha de inicio:</label>
-                        <input type="date">
-                        <label for="name">Fecha de finalización:</label>
-                        <input type="date">
-                    </div>
+                        <div class="task-btns">
+                            <input type="checkbox" name="" id="">
+                            <span class="edit-btn"><i class="fa-solid fa-pencil"></i></span>
+                            <span class="delete-btn"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                    </div>-->
                 </div>
-                <div class="task">
-                    <div class="task-info">
-                        <h3 class="task-title md-text">Cena</h3>
-                        <p class="task-text s-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nesciunt veritatis quas natus voluptatibus esse distinctio blanditiis, alias aliquam reiciendis omnis neque magni ducimus assumenda eum voluptatem ipsam fuga iste?</p>
-                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
-                        <div class="task-dates">
-                            <p class="xs-text"><span>12/07/2034</span></p>
-                            <p class="xs-text"><span>12/05/2034</span></p>
-                        </div>
-                    </div>
-                    <div class="task-btns">
-                        <input type="checkbox" name="" id="">
-                        <span class="edit-btn"><i class="fa-solid fa-pencil"></i></span>
-                        <span class="delete-btn"><i class="fa-solid fa-trash"></i></span>
-                    </div>
-                    <div class="add-task-section">
-                        <label for="title">Titulo:</label>
-                        <input type="text" name="title">
-                        <label for="tarea">tarea:</label>
-                        <input type="text" name="tarea" placeholder="Empiece a escribir">
-                        <label for="name">Fecha de inicio:</label>
-                        <input type="date">
-                        <label for="name">Fecha de finalización:</label>
-                        <input type="date">
-                    </div>
-                </div>
-                <div class="task">
-                    <div class="task-info">
-                        <h3 class="task-title md-text">Cena</h3>
-                        <p class="task-text s-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nesciunt veritatis quas natus voluptatibus esse distinctio blanditiis, alias aliquam reiciendis omnis neque magni ducimus assumenda eum voluptatem ipsam fuga iste?</p>
-                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
-                        <div class="task-dates">
-                            <p class="xs-text"><span>12/07/2034</span></p>
-                            <p class="xs-text"><span>12/05/2034</span></p>
-                        </div>
-                    </div>
-                    <div class="task-btns">
-                        <input type="checkbox" name="" id="">
-                        <span class="edit-btn"><i class="fa-solid fa-pencil"></i></span>
-                        <span class="delete-btn"><i class="fa-solid fa-trash"></i></span>
-                    </div>
-                    <div class="add-task-section">
-                        <label for="title">Titulo:</label>
-                        <input type="text" name="title">
-                        <label for="tarea">tarea:</label>
-                        <input type="text" name="tarea" placeholder="Empiece a escribir">
-                        <label for="name">Fecha de inicio:</label>
-                        <input type="date">
-                        <label for="name">Fecha de finalización:</label>
-                        <input type="date">
+                <div class="add-task-section">
+                    <label for="title">Titulo:</label>
+                    <input type="text" id="taskTitle" class="task-input" name="title">
+                    <label for="tarea">Tarea:</label>
+                    <input type="text" id="taskContent" class="task-input" name="tarea" placeholder="Empiece a escribir">
+                    <label for="name">Fecha de inicio:</label>
+                    <input type="date" id="taskStart" class="task-input">
+                    <label for="name">Fecha de finalización:</label>
+                    <input type="date" id="taskEnd" class="task-input">
+                    <div class="add-task-btns">
+                        <button id="cancelTask" class="btn">Cancelar</button>
+                        <button id="confirmTask" class="btn">Agregar</button>
                     </div>
                 </div>
             </div>

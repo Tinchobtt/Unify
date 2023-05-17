@@ -2,6 +2,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 80px;
     padding: 1em 2em;
     .copyrights{
@@ -15,9 +16,9 @@ footer{
             position: relative;
             width: 80px;
             height: 40px;
-            background-color: rgb(255, 255, 255);
+            background-color: #000000;
             border-radius: 50px;
-            outline: 2px solid #ffffff;
+            outline: 2px solid #00356d;
           }
         .handle{
             display: flex;
@@ -26,7 +27,7 @@ footer{
             position: absolute;
             width: 40px;
             height: 100%;
-            background-color: rgb(36, 57, 79);
+            background-color: #00356d;
             border-radius: 50%;
             transform: translateX(calc(100%));
             cursor: pointer;
@@ -34,12 +35,11 @@ footer{
         }
         .fa-solid{
             font-size: 20px;
-            color: rgb(129, 130, 130);
+            color: rgb(168, 168, 168);
             transition: color .6s;
         }
         .move{
             transform: translateX(0);
-            background-color: rgb(72, 94, 119);
         }
         .move .fa-lightbulb{
             color: rgb(255, 225, 31);

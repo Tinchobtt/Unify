@@ -1,6 +1,10 @@
 /*Letras*/
+.texts{
+    color: var(--white);
+}
 .xxl-text{
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 300;
     color: var(--white);
 }
 .xl-text{
@@ -22,8 +26,16 @@
 .xs-text{
     font-size: 12px;
     color: var(--white);
-    opacity: .5;
 }
+/*BUTTONS*/
+.btn{
+    min-width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /*SCROLL BAR*/
 /* width */
 ::-webkit-scrollbar {
