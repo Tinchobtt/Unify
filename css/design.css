@@ -4,6 +4,7 @@
   --blue: #081B29;
   --nuovo: #151D20;
   --white: #e3e3e3;
+  --white50: #e3e3e37b;
   --confirm: #2fb1aa;
   --cancel: #fe6e66;
   --confirmMax: #3bdbd3;
@@ -48,10 +49,13 @@
 
 /*BUTTONS*/
 .btn {
-  min-width: 80px;
-  height: 30px;
+  min-width: 100px;
+  height: 40px;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -117,7 +121,7 @@ body {
 }
 
 main {
-  width: 1200px;
+  width: 80%;
   height: calc(100vh - 180px);
   max-width: 1400px;
   margin: 0 auto;
@@ -149,27 +153,43 @@ main .central-info header .search {
 main .central-info header .search i {
   cursor: pointer;
 }
-main .central-info header .search input {
-  width: 0;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  margin-left: 1em;
-  outline: none;
+main .central-info header .search .searchBar {
+  position: relative;
+  width: 250px;
+  margin-left: 1.2em;
+  overflow: hidden;
   transition: width 0.5s;
+}
+main .central-info header .search .searchBar input {
+  width: 180px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 14px;
+  padding: 4px 6px 4px 12px;
+  outline: none;
   overflow-x: hidden;
 }
-main .central-info header .search .showInput {
-  padding: 4px 6px 4px 12px;
-  width: 200px;
+main .central-info header .search .searchBar button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 100%;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  padding: 0 5px;
+  cursor: pointer;
+}
+main .central-info header .search .showSearchBar {
+  width: 250px;
 }
 main .central-info header .sort {
   display: flex;
   align-items: center;
-  position: relative;
   margin-right: 1em;
 }
 main .central-info header .sort select {
+  width: 150px;
   border: none;
   border-radius: 10px;
   padding: 4px 28px 4px 12px;
@@ -182,11 +202,9 @@ main .central-info header .sort select {
   cursor: pointer;
 }
 main .central-info header .sort i {
-  position: absolute;
-  right: 6px;
+  margin-left: 1em;
   font-size: 26px;
-  color: var(--nuovo);
-  transform: rotate(90deg);
+  color: var(--white);
   transition: transform 0.5s;
 }
 main .central-info header .sort .spin90 {
@@ -195,8 +213,6 @@ main .central-info header .sort .spin90 {
 main .central-info .task-section {
   position: relative;
   border-right: 1px solid var(--white);
-}
-main .central-info .task-section .tasks {
   overflow-y: scroll;
 }
 main .central-info .task-section .tasks .task {
@@ -205,6 +221,7 @@ main .central-info .task-section .tasks .task {
   position: relative;
   margin: 1em 0;
   padding: 0.5em 0;
+  border-bottom: 1px solid var(--white50);
 }
 main .central-info .task-section .tasks .task .task-info {
   display: flex;
@@ -212,9 +229,6 @@ main .central-info .task-section .tasks .task .task-info {
 }
 main .central-info .task-section .tasks .task .task-info .task-title, main .central-info .task-section .tasks .task .task-info .task-text {
   margin-bottom: 10px;
-}
-main .central-info .task-section .tasks .task .task-info .info-btn:hover + .task-dates {
-  opacity: 1;
 }
 main .central-info .task-section .tasks .task .task-info .task-dates {
   display: flex;
@@ -243,6 +257,9 @@ main .central-info .task-section .tasks .task .task-info .info-btn .fa-solid {
   color: var(--white);
   font-size: 18px;
   cursor: pointer;
+}
+main .central-info .task-section .tasks .task .task-info .info-btn:hover + .task-dates {
+  opacity: 1;
 }
 main .central-info .task-section .tasks .task .task-btns {
   display: flex;
@@ -273,46 +290,50 @@ main .central-info .task-section .tasks .task .task-btns .delete-btn .fa-solid:h
 }
 main .central-info .add-task-section {
   display: none;
-  flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
+  left: 30%;
+  transform: translate(-30%, -50%);
+  width: 380px;
   height: auto;
   padding: 1em;
   background-color: var(--white);
   border-radius: 15px;
 }
-main .central-info .add-task-section .task-input {
+main .central-info .add-task-section #task-form {
+  display: flex;
+  flex-direction: column;
+}
+main .central-info .add-task-section #task-form .task-input {
   margin: 0.5em 0 1em 0;
   padding: 0.5em;
   border: none;
   border-radius: 5px;
   font-size: 12px;
 }
-main .central-info .add-task-section .add-task-btns {
+main .central-info .add-task-section #task-form .add-task-btns {
   display: flex;
   justify-content: space-evenly;
+  margin: 1em 0 0.5em 0;
 }
-main .central-info .add-task-section .add-task-btns #cancelTask {
+main .central-info .add-task-section #task-form .add-task-btns #cancelTask {
   background-color: var(--cancel);
   color: #fff;
 }
-main .central-info .add-task-section .add-task-btns #cancelTask:hover {
+main .central-info .add-task-section #task-form .add-task-btns #cancelTask:hover {
   background-color: var(--cancelMax);
 }
-main .central-info .add-task-section .add-task-btns #confirmTask {
+main .central-info .add-task-section #task-form .add-task-btns #confirmTask {
   background-color: var(--confirm);
   color: #fff;
 }
-main .central-info .add-task-section .add-task-btns #confirmTask:hover {
+main .central-info .add-task-section #task-form .add-task-btns #confirmTask:hover {
   background-color: var(--confirmMax);
 }
 main .central-info .showAddTask {
-  display: flex;
+  display: block;
 }
-main .central-info .percentage {
+main .central-info #percentage {
   grid-column: 2/3;
   align-self: flex-end;
   justify-self: end;
@@ -320,6 +341,7 @@ main .central-info .percentage {
 main .central-info .add-task {
   display: flex;
   justify-content: center;
+  padding-top: 1em;
 }
 main .central-info .add-task .add-btn {
   width: 150px;

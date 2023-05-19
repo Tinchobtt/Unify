@@ -29,10 +29,13 @@
 }
 /*BUTTONS*/
 .btn{
-    min-width: 80px;
-    height: 30px;
+    min-width: 100px;
+    height: 40px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
     cursor: pointer;
 }
 

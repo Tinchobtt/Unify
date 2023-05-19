@@ -29,18 +29,19 @@
             <header>
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input id="searchInput" type="text" placeholder="Buscar...">
+                    <div class="searchBar">
+                        <input id="searchInput" type="text" placeholder="...">
+                        <button id="searchBtn">Buscar</button>
+                    </div>
                 </div>
                 <div class="sort">
                     <select name="sort" id="sortSelect">
-                        <option value="">Agregadas recientemente</option>
-                        <option value="">Urgentes</option>
-                        <option value="">Menos urgentes</option>
-                        <option value="">Hoy</option>
-                        <option value="">Esta semana</option>
-                        <option value="">Este mes</option>
+                        <option value="todo">Todo</option>
+                        <option value="hoy">Hoy</option>
+                        <option value="semana">Esta semana</option>
+                        <option value="mes">Este mes</option>
                     </select>
-                    <i class="fa-solid fa-caret-down"></i>
+                    <i class="fa-solid fa-filter"></i>
                 </div>
             </header>
             <div class="task-section">
@@ -63,22 +64,24 @@
                     </div>-->
                 </div>
                 <div class="add-task-section">
-                    <label for="title">Titulo:</label>
-                    <input type="text" id="taskTitle" class="task-input" name="title">
-                    <label for="tarea">Tarea:</label>
-                    <input type="text" id="taskContent" class="task-input" name="tarea" placeholder="Empiece a escribir">
-                    <label for="name">Fecha de inicio:</label>
-                    <input type="date" id="taskStart" class="task-input">
-                    <label for="name">Fecha de finalización:</label>
-                    <input type="date" id="taskEnd" class="task-input">
-                    <div class="add-task-btns">
-                        <button id="cancelTask" class="btn">Cancelar</button>
-                        <button id="confirmTask" class="btn">Agregar</button>
-                    </div>
-                </div>
+                    <form id="task-form">
+                         <label for="title">Titulo:</label>
+                        <input type="text" id="taskTitle" class="task-input" name="title">
+                         <label for="tarea">Tarea:</label>
+                        <input type="text" id="taskContent" class="task-input" name="tarea" placeholder="Empiece a escribir" required="">
+                         <label for="start">Fecha de inicio:</label>
+                        <input type="date" id="taskStart" name="start" class="task-input" required="">
+                         <label for="end">Fecha de finalización:</label>
+                        <input type="date" id="taskEnd" name="end" class="task-input" required="">
+                        <div class="add-task-btns">
+                            <button id="cancelTask" type="reset" form="task-form" class="btn" formnovalidate>Cancelar</button>
+                            <input type="submit" id="confirmTask" class="btn" value="Agregar">
+                        </div>
+                    </form>
+                </div> 
             </div>
-            <div class="percentage">
-                <span class="xxl-text">60%</span>
+            <div id="percentage">
+                <span class="xxl-text"></span>
             </div>
             <div class="add-task">
                 <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
