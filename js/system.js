@@ -18,7 +18,11 @@ class Task{
         this.checked = false;
     }
 }
-let taskList = [];
+let taskList = JSON.parse(localStorage.getItem('tasks'));
+
+const saveTask = ()=>{
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+}
 
 const createTask = (title, content, start, end)=>{
     if(verificarVacio(content)){
@@ -27,14 +31,24 @@ const createTask = (title, content, start, end)=>{
         id = taskList.length;
         taskList.push(new Task(id, title, content, start, end));
         showTasks(taskList);
+        saveTask();
+        updatePercentage();
     }
 }
 
 const deleteTask = (id)=>{
     if(confirm('¿Deseas eliminar esta tarea?')){
-        taskList.splice(id, 1);
+        let i = 0;
+        while (i < taskList.length) {
+            if (taskList[i].id == id) {
+                taskList.splice(i, 1);
+            } else {
+                i++;
+            }
+        }
         showTasks(taskList);
         updatePercentage()
+        saveTask();
     }
 }
 
@@ -55,6 +69,7 @@ const checkTask = (id, cond)=>{
     let task = taskList.find( (item)=> item.id == id );
     task.checked = cond ? true : false;
     updatePercentage();
+    saveTask();
 }
 
 const putCheck = (btn)=>{

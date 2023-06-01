@@ -150,9 +150,6 @@ main .central-info header .search {
   align-items: center;
   margin-left: 1em;
 }
-main .central-info header .search i {
-  cursor: pointer;
-}
 main .central-info header .search .searchBar {
   position: relative;
   width: 250px;
