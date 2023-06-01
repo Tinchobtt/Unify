@@ -19,6 +19,7 @@ class Task{
     }
 }
 let taskList = JSON.parse(localStorage.getItem('tasks'));
+console.log(taskList)
 
 const saveTask = ()=>{
     localStorage.setItem('tasks', JSON.stringify(taskList));
