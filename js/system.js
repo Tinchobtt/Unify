@@ -18,8 +18,7 @@ class Task{
         this.checked = false;
     }
 }
-let taskList = JSON.parse(localStorage.getItem('tasks'));
-console.log(taskList)
+let taskList = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const saveTask = ()=>{
     localStorage.setItem('tasks', JSON.stringify(taskList));
