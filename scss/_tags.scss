@@ -9,3 +9,9 @@ body{
     height: 100vh;
     background-color: var(--blue);
 }
+@media (min-width: 1440px){
+    body{
+        max-width: 1440px;
+        margin: auto;
+    }
+}

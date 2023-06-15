@@ -64,3 +64,43 @@ const icon = document.querySelector('.fa-solid');
 handle.addEventListener('click', ()=>{
     handle.classList.toggle('move');
 })
+
+//Weather
+const inputCity = document.querySelector('#input-city');
+const formWeather = document.querySelector('form');
+
+const weatherTemp = document.querySelector('.weather-temp');
+const weatherDesc = document.querySelector('.weather-desc');
+const weatherImg = document.querySelector('.weather-img');
+
+const getWeather = async(url)=>{
+    try {
+        const response = await fetch(url);
+        const info = await response.json();
+    
+        let icon = info.current.condition.icon;
+        let temp = info.current.temp_c;
+        let desc = info.current.condition.text;
+    
+        weatherTemp.innerHTML =  temp + 'º';
+        weatherDesc.innerHTML =  desc;
+        weatherImg.src = icon;
+        inputCity.value = info.location.country;
+    } catch (error) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'No se encontró la ubicación deseada!',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        });
+    }   
+}
+
+formWeather.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let city = inputCity.value;
+    let url = `http://api.weatherapi.com/v1/current.json?key=afa6cf33f4004c50aac191211231006&q=${city}&aqi=no`;
+    getWeather(url);  
+})
+
+getWeather(`http://api.weatherapi.com/v1/current.json?key=afa6cf33f4004c50aac191211231006&q=buenos aires&aqi=no`);

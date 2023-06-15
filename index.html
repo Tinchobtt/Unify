@@ -13,8 +13,23 @@
             <img src="assets/logo/logo-dark.svg" alt="logotipo">
         </div>
         <div class="daily-info">
+            <div class="weather-container">
+                <form action="">
+                    <input id="input-city" type="text" placeholder="Ciudad">
+                    <input id="submit" type="submit" value="Buscar">
+                </form>
+                <div class="weather">
+                    <div class="weather-img-container">
+                        <img class="weather-img" >
+                    </div>
+                    <div class="weather-content">
+                        <h3 class="weather-temp"></h3>
+                        <p class="weather-desc"></p>
+                    </div>
+                </div>
+            </div>
             <div class="daily-day">
-                <span class="md-text">Sunday</span>
+                <span class="md-text"></span>
             </div>
             <div class="daily-date">
                 <span class="md-text"></span>
@@ -92,13 +107,14 @@
         <div class="copyrights">
             <p>© 2023 Martìn Benedetto</p>
         </div>
-        <div class="dark-light">
+        <div class="dark-light" style="display: none;">
             <div class="track">
                 <span class="handle"><i class="fa-solid fa-lightbulb"></i>
             </div>
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/95134b7c36.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/system.js"></script>
     <script src="js/action.js"></script>
 </body>

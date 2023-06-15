@@ -26,10 +26,14 @@ const saveTask = ()=>{
 
 const createTask = (title, content, start, end)=>{
     if(verificarVacio(content)){
-        alert('No ingresaste ninguna tarea, intentelo de nuevo');
+        Swal.fire({
+            icon: 'error',
+            text: 'No ingresaste ninguna tarea, intentelo de nuevo!',
+          })
     }else{
-        id = taskList.length;
-        taskList.push(new Task(id, title, content, start, end));
+        let id = taskList.length;
+        let titlePred = title === ''? 'Sin título' : title;
+        taskList.push(new Task(id, titlePred, content, start, end));
         showTasks(taskList);
         saveTask();
         updatePercentage();
@@ -37,19 +41,33 @@ const createTask = (title, content, start, end)=>{
 }
 
 const deleteTask = (id)=>{
-    if(confirm('¿Deseas eliminar esta tarea?')){
-        let i = 0;
-        while (i < taskList.length) {
-            if (taskList[i].id == id) {
-                taskList.splice(i, 1);
-            } else {
-                i++;
+    Swal.fire({
+        title: '¿Deseas eliminar esta tarea?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let i = 0;
+            while (i < taskList.length) {
+                if (taskList[i].id == id) {
+                    taskList.splice(i, 1);
+                } else {
+                    i++;
+                }
             }
+            showTasks(taskList);
+            updatePercentage()
+            saveTask();
+            Swal.fire(
+                'Eliminada!',
+                'Se eliminó la tarea.',
+                'success'
+            )
         }
-        showTasks(taskList);
-        updatePercentage()
-        saveTask();
-    }
+      })
 }
 
 const updatePercentage = ()=>{
@@ -136,7 +154,10 @@ const showTasks = (taskList)=>{
 const searchTask = (search)=>{
     let searchListTask = taskList.filter( (task)=> task.title === search );
     if(listaVacia(searchListTask)){
-        alert('No se encontró la tarea solicitada!');
+        Swal.fire({
+            icon: 'error',
+            text: 'No se encontró la tarea solicitada!'
+          })
     }else{
         showTasks(searchListTask);
     }
