@@ -99,8 +99,8 @@ const getWeather = async(url)=>{
 formWeather.addEventListener('submit', (e)=>{
     e.preventDefault();
     let city = inputCity.value;
-    let url = `http://api.weatherapi.com/v1/current.json?key=afa6cf33f4004c50aac191211231006&q=${city}&aqi=no`;
+    let url = `https://api.weatherapi.com/v1/current.json?key=&q=${city}&aqi=no`;
     getWeather(url);  
 })
 
-getWeather(`http://api.weatherapi.com/v1/current.json?key=afa6cf33f4004c50aac191211231006&q=buenos aires&aqi=no`);
+getWeather(`https://api.weatherapi.com/v1/current.json?key=&q=buenos aires&aqi=no`);
