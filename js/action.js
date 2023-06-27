@@ -73,11 +73,13 @@ const weatherTemp = document.querySelector('.weather-temp');
 const weatherDesc = document.querySelector('.weather-desc');
 const weatherImg = document.querySelector('.weather-img');
 
-const getWeather = async(url)=>{
+const getWeather = async(city)=>{
+    let url = 'https://api.weatherapi.com/v1/current.json';
     const apiKey = 'afa6cf33f4004c50aac191211231006';
-    let urlKey = url + '&key=' + apiKey;
+    let urlKey = url + '?&key=' + apiKey + `&q=${city}&aqi=no`;
+
     try {
-        const response = await fetch(url);
+        const response = await fetch(urlKey);
         const info = await response.json();
     
         let icon = info.current.condition.icon;
@@ -93,7 +95,7 @@ const getWeather = async(url)=>{
             title: 'Error!',
             text: 'No se encontró la ubicación deseada!',
             icon: 'error',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Cerrar'
         });
     }   
 }
@@ -101,8 +103,7 @@ const getWeather = async(url)=>{
 formWeather.addEventListener('submit', (e)=>{
     e.preventDefault();
     let city = inputCity.value;
-    let url = `https://api.weatherapi.com/v1/current.json?key=&q=${city}&aqi=no`;
-    getWeather(url);  
+    getWeather(city);  
 })
 
-getWeather(`https://api.weatherapi.com/v1/current.json?key=&q=buenos aires&aqi=no`);
+getWeather(`buenos aires`);
