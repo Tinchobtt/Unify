@@ -74,6 +74,8 @@ const weatherDesc = document.querySelector('.weather-desc');
 const weatherImg = document.querySelector('.weather-img');
 
 const getWeather = async(url)=>{
+    const apiKey = 'afa6cf33f4004c50aac191211231006';
+    let urlKey = url + '&key=' + apiKey;
     try {
         const response = await fetch(url);
         const info = await response.json();
